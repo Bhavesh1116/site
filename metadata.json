@@ -1,0 +1,5 @@
+{
+  "name": "PPMS Spend Tracker",
+  "description": "A corporate expense tracking SaaS application for PPMS employees and administrators.",
+  "requestFramePermissions": []
+}
