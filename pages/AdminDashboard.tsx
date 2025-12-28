@@ -3,8 +3,9 @@ import { getAllExpenses, createExpense } from '../services/expenseService'; // c
 import { getUsers } from '../services/mockDatabase';
 import { Expense, User, UserRole } from '../types';
 import { Card } from '../components/Card';
+import { Button } from '../components/Button';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { IndianRupee, Users, TrendingUp, CheckCircle } from 'lucide-react';
+import { IndianRupee, Users, TrendingUp, CheckCircle, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface AggregatedData {
@@ -52,7 +53,16 @@ export const AdminDashboard: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-gray-900">Executive Overview</h1>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <h1 className="text-2xl font-bold text-gray-900">Executive Overview</h1>
+        <Button 
+          variant="secondary" 
+          onClick={() => window.open('/', '_blank')}
+          className="text-xs w-full sm:w-auto"
+        >
+          View User Panel <ExternalLink className="ml-2 h-3 w-3" />
+        </Button>
+      </div>
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
